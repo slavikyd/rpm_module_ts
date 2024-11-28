@@ -1,6 +1,26 @@
-# Это пустой README для проекта по РПМ.
+# Это README для проекта по РПМ.
 
-This will be fully edited a bit later
+## Simple weather api handler project
+
+### Project Description
+
+Yet another homework project that is based around TypeScript and my hyperfixation with Weather APIs :D.
+
+This project will later be implemented into the simple_autometeo project but for now it is compeletely separate project.
+
+### Development
+
+There is nothing here currently
+
+### Commit namings
+
+- feat: additions of new functionality
+- fix: fixes of errors\typoos
+- docs: additions of documentation\README updates
+
+### Branches namings
+
+- feature/name - branch for new feature 
 
 # React + TypeScript + Vite
 
