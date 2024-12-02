@@ -8,13 +8,31 @@ import { Layout } from '@consta/uikit/Layout';
 const MainLayout = () => {
     return (
         <Layout className={style.MainLayout}>
-            <Header />
-            <hr className={style.line}/>
-            <main className={style.main}>
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                flexWrap: "nowrap",
+                minHeight: "100vh",
+                maxHeight: "100vh"
+            }}>
+                <Header />
+                <hr className={style.line}/>
+                <div style={{
+                    flexGrow: 1,
+                    overflow: "auto"
+                }}>
+                    <Outlet />
+                </div>
+                <hr className={style.line}/>
+                <Footer />
+            </div>
+
+            {/* <main className={style.main}>
                 <Outlet />
             </main>
             <hr className={style.line}/>
-            <Footer />
+
+            <Footer /> */}
         </Layout>
     )
 }
