@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Text } from '@consta/uikit/Text';
 import { getToken } from '../../services/token';
+import { API_get_link } from '../../../const';
 
 const ServiceDetailPage = () => {
   const [service, setService] = useState(null);
@@ -20,7 +21,7 @@ const ServiceDetailPage = () => {
   
     let isNeedUpdate = true;
 
-    fetch(`https://673423afa042ab85d1190055.mockapi.io/api/v1/services/${serviceId}`, {
+    fetch(`${API_get_link}${serviceId}`, {
       method: 'GET',
     })
       .then((response) => response.json())

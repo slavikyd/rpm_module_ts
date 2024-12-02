@@ -8,7 +8,7 @@ const Footer = () => {
         <Layout className={style.Footer}>
             <Menu />
             <div>
-                <p>©SlavikYD 2024</p>
+                <p>©SlavikYD {new Date().getFullYear()}</p>
             </div>
         </Layout>
     )

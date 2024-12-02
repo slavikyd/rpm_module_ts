@@ -21,7 +21,10 @@ const MainLayout = () => {
                     flexGrow: 1,
                     overflow: "auto"
                 }}>
-                    <Outlet />
+                    {/* <Outlet /> */}
+                    <main className={style.main}>
+                <Outlet />
+            </main>
                 </div>
                 <hr className={style.line}/>
                 <Footer />
@@ -32,7 +35,7 @@ const MainLayout = () => {
             </main>
             <hr className={style.line}/>
 
-            <Footer /> */}
+             <Footer /> */}
         </Layout>
     )
 }

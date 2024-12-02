@@ -20,7 +20,7 @@ const App = function() {
       <BrowserRouter>
         <Suspense fallback={
             <div style={{width:"100vw", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-              <Loader size="l" />
+              <Loader size="m" style={{strokeColor: '#168500f7', color: 'green'}}/>
             </div>
           }
         >
@@ -34,7 +34,9 @@ const App = function() {
           </Route>
           <Route path='*' element={
             <div style={{width:"100vw", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-              <Responses404 />
+              <Responses404
+              //  actions={<Button label='Go back' onClick={() => window.history.back()}/>}
+              />
             </div>}/>
         </Routes></Suspense>
       </BrowserRouter>

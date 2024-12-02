@@ -5,11 +5,13 @@ import Menu from '../menu/Menu';
 import React from 'react';
 import style from "./Header.module.css";
 import { getToken, dropToken } from "../../services/token";
+import { useSelector } from 'react-redux';
 
 
 const Header = () => {
     const {pathname} = useLocation()
     const navigate = useNavigate();
+    const user = useSelector((state) => state.user);
 
     const handleLogout = () => {
         dropToken();
@@ -21,24 +23,22 @@ const Header = () => {
             <Menu />
 
             <div className={style.rightBlock}>
+                {getToken() ?
+                <NavLink to='/profile'>
 
-            <NavLink to='/profile'>
+                            <Button view={pathname==="/profile" ? "primary" : "secondary"} label={`${user?.firstName} ${user?.lastName}`}>
+                            </Button>
 
-                <Button view={pathname==="/profile" ? "primary" : "secondary"} label='Full name'>
-                </Button>
-
-            </NavLink>
-
+                        </NavLink> 
+                    : ''}
             <NavLink to='/login'>
 
-                {
-                    getToken() ? <Button view="secondary" onClick={handleLogout} label='Log out'>
+            {getToken() ? <Button view="secondary" onClick={handleLogout} label='Log out'>
 
-                    </Button>
-                        : <Button view={pathname==="/login" ? "primary" : "secondary"} label='Sign in'></Button>
-                }
+            </Button>
+                : <Button view={pathname === "/login" ? "primary" : "secondary"} label='Sign in'></Button>}
 
-            </NavLink>
+        </NavLink>
             
             </div>
         
