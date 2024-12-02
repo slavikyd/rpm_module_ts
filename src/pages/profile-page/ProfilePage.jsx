@@ -37,7 +37,6 @@ const ProfilePage = () => {
       } catch (err) {
         setError(err.message || "An error occurred while fetching user info");
       } finally {
-        setLoading(false);
       }
     };
 

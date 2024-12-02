@@ -6,6 +6,8 @@ import { Grid, GridItem } from '@consta/uikit/Grid';
 import { useDispatch, useSelector } from 'react-redux';
 import { setServices } from '../../store/store';
 import { getToken } from '../../services/token';
+import { API_link, AppRoute } from '../../../const';
+import App from '../../components/app/App';
 
 
 const ServicePage = () => {
@@ -21,7 +23,7 @@ const ServicePage = () => {
       return;
     }
 
-    fetch('https://673423afa042ab85d1190055.mockapi.io/api/v1/services', { method: 'GET' })
+    fetch(API_link, { method: 'GET' })
       .then((response) => response.json())
       .then((data) => dispatch(setServices(data)))
       .catch((error) => console.error('Error fetching services:', error));
@@ -51,7 +53,7 @@ const ServicePage = () => {
  
           <Text>{service.description}</Text>
  
-          <Link to={`/service/${service.id}`}>
+          <Link to={`${AppRoute.service}/${service.id}`}>
 
             <Text as="span" view="link" style={{color: '#214725'}} >Read More</Text>
           
